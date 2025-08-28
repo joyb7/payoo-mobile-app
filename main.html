@@ -18,7 +18,7 @@
             <div class="flex">
                 <img src="assets/Group.png" class="h-[50px]" alt="">
                 <div>
-                    <h2 class="font-bold">$<span>45000</span></h2>
+                    <h2 class="font-bold">$<span id="available-balance">45000</span></h2>
                     <p class=" text-[#8a8585]">Account Balance</p>
                 </div>
             </div>
@@ -34,11 +34,11 @@
                 transparent.</p>
         </div>
         <div class="max-w-lg mx-auto mt-8 grid grid-cols-3 gap-4 p-4">
-            <div class="border-2 border-gray-300 text-center rounded-xl">
+            <div id="add-button" class="border-2 border-gray-300 text-center rounded-xl">
                 <img src="assets/wallet1.png" class="mx-auto p-3" alt="">
                 <p>Add Money</p>
             </div>
-            <div class="border-2 border-gray-300 text-center rounded-xl">
+            <div id="cash-out-button" class="border-2 border-gray-300 text-center rounded-xl">
                 <img src="assets/send1.png" class="mx-auto p-3" alt="">
                 <p>Cashout</p>
             </div>
@@ -63,12 +63,12 @@
 
     <div class="all-form-section max-w-lg mx-auto">
         <!-- add money -->
-        <div>
+        <div id="add-money-parent" style="display: none;">
             <h1 class="p-4 font-bold">Add Money</h1>
             <form action="" class="bg-white rounded-2xl p-8">
                 <div>
                     <h1 class="font-semibold">Select Bank</h1>
-                    <select class="select bg-[#f4f5f7] mt-3 rounded-3xl w-full">
+                    <select id="bank" class="select bg-[#f4f5f7] mt-3 rounded-3xl w-full">
                         <option>Select back</option>
                         <option>AB Bank</option>
                         <option>UCB Bank</option>
@@ -81,23 +81,54 @@
                 <div class="mt-4">
                     <label class="font-semibold" for="">Bank Account Number</label>
                     <br>
-                    <input type="text" placeholder="Enter 11 digit account number"
+                    <input id="account-number" type="text" placeholder="Enter 11 digit account number"
                         class="input bg-[#f4f5f7] mt-3 rounded-3xl w-full" />
                 </div>
                 <div class="mt-4">
                     <label class="font-semibold" for="">Amount to Add</label>
                     <br>
-                    <input type="text" placeholder="Add Amount to withdraw"
+                    <input id="add-amount" type="text" placeholder="Add Amount to withdraw"
                         class="input bg-[#f4f5f7] mt-3 rounded-3xl w-full" />
                 </div>
                 <div class="mt-4">
                     <label class="font-semibold" for="">Pin Number</label>
                     <br>
-                    <input type="text" placeholder="Enter 4 digit pin number"
+                    <input id="pin-number" type="text" placeholder="Enter 4 digit pin number"
                         class="input bg-[#f4f5f7] mt-3 rounded-3xl w-full" />
                 </div>
                 <div class="mt-4">
-                    <button class="btn bg-[#0874F2] mt-5 w-full rounded-3xl text-white">Add Money</button>
+                    <button id="add-money-btn" class="btn bg-[#0874F2] mt-5 w-full rounded-3xl text-white">Add
+                        Money</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- cash out -->
+
+        <div id="cash-out-parent" style="display: none;">
+            <h1 class="p-4 font-bold">Cash Out</h1>
+            <form action="" class="bg-white rounded-2xl p-8">
+                <div class="mt-4">
+                    <label class="font-semibold" for="">Agent Number</label>
+                    <br>
+                    <input id="agent-number" type="text" placeholder="Enter 11 digit account number"
+                        class="input bg-[#f4f5f7] mt-3 rounded-3xl w-full" />
+                </div>
+                <div class="mt-4">
+                    <label class="font-semibold" for="">Amount</label>
+                    <br>
+                    <input id="withdraw-amount" type="text" placeholder="Enter amount to withdraw"
+                        class="input bg-[#f4f5f7] mt-3 rounded-3xl w-full" />
+                </div>
+                <div class="mt-4">
+                    <label class="font-semibold" for="">Pin Number</label>
+                    <br>
+                    <input id="withdraw-pin" type="text" placeholder="Enter 4 digit pin number"
+                        class="input bg-[#f4f5f7] mt-3 rounded-3xl w-full" />
+                </div>
+                <div class="mt-4">
+                    <button id="withdraw-btn" class="btn bg-[#0874F2] mt-5 w-full rounded-3xl text-white">Withdraw
+                        Money</button>
                 </div>
             </form>
         </div>
